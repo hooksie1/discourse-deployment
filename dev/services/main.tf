@@ -20,7 +20,7 @@ data "terraform_remote_state" "infrastructure" {
 }
 
 module "instances" {
-    source                  = "github.com/hooksie1/discourse-aws//instances"
+    source                  = "github.com/hooksie1/discourse-aws//instances?ref=v1.0"
     region                  = "us-east-1"
     domain_name             = "cloudprepared.com"
     remote_state_bucket     = "cloudprepared"
