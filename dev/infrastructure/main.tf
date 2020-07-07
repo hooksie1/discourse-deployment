@@ -10,7 +10,7 @@ terraform {
 }
 
 module "discourse" {
-    source              = "github.com/hooksie1/discourse-aws//infrastructure?ref=v1.0"
+    source              = "github.com/hooksie1/discourse-aws//infrastructure?ref=v1.1"
     region              = "us-east-1"
     CP_vpc_cidr         = "10.1.0.0/16"
     CP_web_subnet_cidr  = "10.1.2.0/24"
