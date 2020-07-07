@@ -29,14 +29,16 @@ module "instances" {
     default_ami             = "ami-07d0cf3af28718ef8"
     wazuh_ec2_instance_type = "t2.micro"
     vpn_subnet_cidr         = "10.1.1.0/24"
-    web_subnet_cidr         = data.terraform_remote_state.infrastructure.CP_web_subnet_cidr
+    web_subnet_cidr         = data.terraform_remote_state.infrastructure.outputs.CP_web_subnet_cidr
     db_subnet_cidr          = "10.1.4.0/24"
     app_subnet_cidr         = "10.1.5.0/24"
-    mgmt_subnet_cidr        = data.Terraform_remote_state.infrastructure.CP_mgmt_subnet_cidr
+    mgmt_subnet_cidr        = data.terraform_remote_state.infrastructure.outputs.CP_mgmt_subnet_cidr
     home_ip                 = ""
     vpn_ip                  = ""
     work_ip                 = ""
     key_pair_name           = "cloudprepared"
     dns_zone                = ""
+    web_sec_group_id        = data.terraform_remote_state.infrastructure.outputs.CP_web_sg_id
+    ssh_sec_group_id        = data.terraform_remote_state.infrastructure.outputs.CP_ssh_sg_id
 }
 
