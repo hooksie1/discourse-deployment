@@ -23,8 +23,6 @@ module "instances" {
     source                  = "github.com/hooksie1/discourse-aws//instances?ref=v1.0"
     region                  = "us-east-1"
     domain_name             = "cloudprepared.com"
-    remote_state_bucket     = "cloudprepared"
-    remote_state_key        = "terraform/CP-infrastructure.tfstate"
     ec2_instance_type       = "t2.micro"
     max_instance_size       = "15"
     min_instance_size       = "3"
